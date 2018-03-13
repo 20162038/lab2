@@ -11,23 +11,23 @@ architecture behave of process_tb is
   signal r_SIG4   : std_logic := '0';
   signal w_RESULT : std_logic;
 -- naudoti 4ARBA vhd
-  component or4 is
+  component and2 is
     port (
-      i_bit1    : in  std_logic;
-      i_bit2    : in  std_logic;
-      i_bit3    : in  std_logic;
-      i_bit4    : in  std_logic;
+      i_bit0    : in  std_logic;
+      i_bit1   : in  std_logic;
+      i_bit2   : in  std_logic;
+      i_bit3   : in  std_logic;
       o_bit : out std_logic);
-  end component or4;
+  end component and2;
 --behin behave
 begin
 
-  and_gate_INST : or4
+  and_gate_INST : and2
     port map (
-      i_bit1    => r_SIG1,
-      i_bit2    => r_SIG2,
-      i_bit3    => r_SIG3,
-      i_bit4    => r_SIG4,
+      i_bit0    => r_SIG1,
+      i_bit1    => r_SIG2,
+      i_bit2    => r_SIG3,
+      i_bit3    => r_SIG4,
       o_bit => w_RESULT
       );
 	  
